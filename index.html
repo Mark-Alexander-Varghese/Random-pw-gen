@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Password Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Generate a <br><span>Random Password Generator</span></h1>
+
+    <div class="display">
+      <input type="text" id="password" placeholder="Your Password" readonly>
+      <img src="images/copy.png" alt="Copy Password" onclick="copyPassword()">
+    </div>
+
+    <button onclick="createPassword()">
+      <img src="images/generate.png" alt="Generate Password">Generate Password
+    </button>
+  </div>
+
+  <div class="password-info">
+   
+  </div>
+
+  <h2>Comprehensive Guide to Protecting Your Passwords and Online Security</h2>
+  <div class="security-guide">
+    <p>To prevent your passwords from being hacked by social engineering, brute force, or dictionary attack methods, follow these steps:</p>
+    <ul>
+      <li>1. Do not use the same password, security question, and answer for multiple important accounts.</li>
+      <li>2. Use a password that has at least 16 characters, including numbers, uppercase, lowercase, and special symbols.</li>
+      <li>3. Avoid using names of family, friends, or pets in passwords.</li>
+      <li>4. Avoid using easily guessable information like birthdates, phone numbers, or postcodes.</li>
+      <li>5. Do not use dictionary words in your password.</li>
+      <li>6. Avoid using similar passwords for different accounts, such as "iloveflowersDropbox" and "iloveflowersEmail".</li>
+      <li>7. Do not store your passwords in your web browser.</li>
+      <li>8. Avoid logging in to important accounts on public computers or unsecured networks.</li>
+      <li>9. Use encryption for sensitive information sent over the internet.</li>
+      <li>10. Use strong encryption methods such as HTTPS or VPNs when traveling.</li>
+      <li>11. Regularly check your password strength and update weak passwords.</li>
+      <li>12. Change your passwords every 10 weeks.</li>
+      <li>13. Use password managers to store and encrypt your passwords securely.</li>
+      <li>14. Enable two-factor authentication wherever possible.</li>
+      <li>15. Avoid storing critical passwords in the cloud.</li>
+      <li>16. Be cautious when clicking on links in emails or messages for password resets.</li>
+      <li>17. Ensure your computer is protected with a firewall and antivirus software.</li>
+      <li>18. Keep your operating system and browsers updated with the latest security patches.</li>
+      <li>19. Use virtual keyboards to enter passwords on public Wi-Fi to avoid potential sniffing.</li>
+      <li>20. Encrypt the entire hard drive for sensitive data, and destroy old hard drives if needed.</li>
+      <li>21. Log in to important websites using incognito or private browsing modes for additional privacy.</li>
+      <li>22. Use multiple email addresses and phone numbers to protect sensitive accounts.</li>
+      <li>23. Avoid sharing passwords via email or SMS.</li>
+      <li>24. Verify software downloads with checksums to ensure they haven't been tampered with.</li>
+      
+    </ul>
+  </div>
+
+  <script>
+    const passwordBox = document.getElementById("password");          
+    const length = 12;
+    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    const number = "0123456789";
+    const symbols = "@#$%^&*()<>?_=+-";
+    
+    const allChars = upperCase + lowerCase + number + symbols;
+
+    function createPassword() {
+      let password = "";
+      password += upperCase[Math.floor(Math.random() * upperCase.length)];
+      password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+      password += number[Math.floor(Math.random() * number.length)];
+      password += symbols[Math.floor(Math.random() * symbols.length)];
+      
+      while (password.length < length) {
+        password += allChars[Math.floor(Math.random() * allChars.length)];
+      }
+      
+      passwordBox.value = password;
+    }
+
+    
+    function copyPassword() {
+      passwordBox.select();
+      document.execCommand("copy");
+      alert("Password copied to clipboard!");
+    }
+  </script>
+</body>
+</html>

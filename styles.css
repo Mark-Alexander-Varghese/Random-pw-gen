@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #181818; /* Dark background */
+  color: #eaeaea; /* Light text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: #1e1e1e; /* Slightly lighter black for the container */
+  color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Deeper shadow for depth */
+  border: 1px solid #333; /* Subtle border */
+}
+
+.container h1 {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #f2f2f2;
+}
+
+.container h1 span {
+  color: #00ccff; /* Electric blue for the highlight */
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222; /* Darker background for the display */
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  border: 1px solid #333; /* Matches container border */
+}
+
+.display input {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 18px;
+  width: 80%;
+}
+
+.display img {
+  width: 25px;
+  cursor: pointer;
+  filter: invert(1); /* White icon */
+}
+
+button {
+  background: #00ccff; /* Electric blue */
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background: #1ab2e5; /* Slightly lighter blue on hover */
+}
+
+.password-info {
+  margin-top: 20px;
+  text-align: left;
+  color: #ddd; /* Light grey text for the info section */
+}
+
+.password-info h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  border-bottom: 2px solid #00ccff; /*
